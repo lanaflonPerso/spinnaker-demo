@@ -23,6 +23,7 @@ PART2: https://dzone.com/articles/monitoring-using-spring-boot-20-prometheus-and
 
 demo code:
   https://github.com/hellosatish/monitoring/blob/master/person-application/src/main/resources/application.properties
+  https://github.com/callicoder/spring-boot-actuator-demo
 
 Once running actuator exposing metrics for use at this endpoint , you need to scrap those into prometheus ->
 
@@ -51,6 +52,15 @@ scrape_configs:
     metrics_path: '/actuator/prometheus'
     static_configs:
       - targets: ['HOST_IP:PORT']
+
+The above configuration file is an extension of the basic configuration file available in the Prometheus documentation.
+The most important stuff to note in the above configuration file is the spring-actuator job inside scrape_configs section.
+The metrics_path is the path of the Actuator’s prometheus endpoint. The targets section contains the HOST and PORT of your
+Spring Boot application.
+
+Please make sure to replace the HOST_IP with the IP address of the machine where your Spring Boot application is running.
+Note that, localhost won’t work here because we’ll be connecting to the HOST machine from the docker container. You must
+specify the network IP address.
 
 
 
