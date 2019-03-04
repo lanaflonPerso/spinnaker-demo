@@ -1,0 +1,59 @@
+Datadog:
+
+https://docs.spring.io/spring-metrics/docs/current/public/datadog
+
+  metrics:
+    export:
+      datadog:
+        api-key: ec157ede10f9308db126d85b00f14dc4
+        enabled: true
+        step: PT10S
+        application-key: d613f8440e287800ea4d18ca862e2d17413e4411
+
+        <dependency>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-registry-datadog</artifactId>
+        </dependency>
+
+
+Promethus:
+
+PART1: https://www.callicoder.com/spring-boot-actuator-metrics-monitoring-dashboard-prometheus-grafana/
+PART2: https://dzone.com/articles/monitoring-using-spring-boot-20-prometheus-and-gra (Use a SCRAP YAML file)
+
+demo code:
+  https://github.com/hellosatish/monitoring/blob/master/person-application/src/main/resources/application.properties
+
+Once running actuator exposing metrics for use at this endpoint , you need to scrap those into prometheus ->
+
+papicella@papicella:~$ http http://localhost:8080/actuator/prometheus
+HTTP/1.1 200
+Content-Length: 12613
+Content-Type: text/plain; version=0.0.4;charset=utf-8
+Date: Mon, 04 Mar 2019 11:03:50 GMT
+
+# HELP jvm_classes_unloaded_classes_total The total number of classes unloaded since the Java virtual machine has started execution
+# TYPE jvm_classes_unloaded_classes_total counter
+jvm_classes_unloaded_classes_total 1.0
+# HELP hikaricp_connections Total connections
+# TYPE hikaricp_connections gauge
+...
+
+Scrap file: myapp.yaml
+
+#Global configurations
+global:
+  scrape_interval:     5s # Set the scrape interval to every 5 seconds.
+  evaluation_interval: 5s # Evaluate rules every 5 seconds.
+
+scrape_configs:
+  - job_name: 'spinnaker-app'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ['HOST_IP:PORT']
+
+
+
+
+
+
