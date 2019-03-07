@@ -23,7 +23,7 @@ management:
         prometheus:
           pushgateway:
             enabled: true
-            job: spinnaker-demo
+            job: spinnaker_demo
             base-url: http://10.195.72.141:9091
 version: 1.0
 
