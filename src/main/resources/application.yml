@@ -20,9 +20,11 @@ management:
       enabled: true
   metrics:
     export:
-      prometheus:
-        enabled: true
-        step: 1m
+        prometheus:
+          pushgateway:
+            enabled: true
+            job: spinnaker-demo
+            base-url: http://10.195.72.141:9091
 version: 1.0
 
 ---
