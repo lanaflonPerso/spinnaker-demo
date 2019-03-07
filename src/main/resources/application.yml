@@ -23,7 +23,6 @@ management:
       prometheus:
         enabled: true
         step: 1m
-
 version: 1.0
 
 ---

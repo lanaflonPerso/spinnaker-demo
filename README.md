@@ -1,6 +1,6 @@
 # Spinnaker CF Summit Demo
 
-##REST App endpoints:
+## REST App endpoints
 
 ```
 http http://{url}/v1/customers
@@ -9,7 +9,7 @@ http http://{url}/about
 
 ```
 
-##UI App endpoints:
+## UI App endpoints
 
 ```
 http://{url}/swagger-ui.html

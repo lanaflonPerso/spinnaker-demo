@@ -20,6 +20,7 @@ Promethus:
 
 PART1: https://www.callicoder.com/spring-boot-actuator-metrics-monitoring-dashboard-prometheus-grafana/
 PART2: https://dzone.com/articles/monitoring-using-spring-boot-20-prometheus-and-gra (Use a SCRAP YAML file)
+PART2-demo: https://dzone.com/articles/monitoring-using-spring-boot-20-prometheus-and-gra
 
 demo code:
   https://github.com/hellosatish/monitoring/blob/master/person-application/src/main/resources/application.properties
@@ -62,6 +63,9 @@ Please make sure to replace the HOST_IP with the IP address of the machine where
 Note that, localhost won’t work here because we’ll be connecting to the HOST machine from the docker container. You must
 specify the network IP address.
 
+OR use push gateway:
+
+https://github.com/prometheus/pushgateway
 
 
 
