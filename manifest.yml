@@ -1,0 +1,7 @@
+---
+applications:
+  - name: spinnaker-demo
+    memory: 1024M
+    instances: 1
+    random-route: true
+    path: ./target/spinnaker-demo-0.0.1-SNAPSHOT.jar

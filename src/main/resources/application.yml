@@ -20,11 +20,11 @@ management:
       enabled: true
   metrics:
     export:
-        prometheus:
-          pushgateway:
-            enabled: true
-            job: spinnaker_demo
-            base-url: http://10.195.72.141:9091
+      datadog:
+        api-key: 81a5c1653097ede0fc4555e95b6fcccd
+        enabled: true
+        step: PT10S
+        application-key: d76492bd478f07bbe1c3ac4128248a7bde51b7e9
 version: 1.0
 
 ---

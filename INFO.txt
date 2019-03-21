@@ -2,6 +2,11 @@ Datadog:
 
 https://docs.spring.io/spring-metrics/docs/current/public/datadog
 
+management:
+
+...
+
+
   metrics:
     export:
       datadog:
@@ -17,6 +22,33 @@ https://docs.spring.io/spring-metrics/docs/current/public/datadog
 
 
 Promethus:
+
+management:
+  endpoints:
+    enabled-by-default: true
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      enabled: true
+      show-details: always
+    prometheus:
+      enabled: true
+  metrics:
+    export:
+        prometheus:
+          pushgateway:
+            enabled: true
+            job: spinnaker-demo
+            base-url: http://10.195.72.141:9091
+            push-rate: 10s
+          enabled: true
+
+        <dependency>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-registry-prometheus</artifactId>
+        </dependency>
 
 PART1: https://www.callicoder.com/spring-boot-actuator-metrics-monitoring-dashboard-prometheus-grafana/
 PART2: https://dzone.com/articles/monitoring-using-spring-boot-20-prometheus-and-gra (Use a SCRAP YAML file)
