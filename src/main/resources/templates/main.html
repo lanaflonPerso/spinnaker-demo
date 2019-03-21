@@ -7,6 +7,16 @@
 <body>
 <h1> <font th:color="${headingColour}"> Spinnaker Demo CF Summit </font></h1>
 
+<img th:if="${headingColour == 'blue'}" src="blue-car.png"
+     th:src="@{blue-car.png}"
+     alt="BlueCar"
+     border="0"/>
+
+<img th:if="${headingColour == 'green'}" src="green-car.png"
+     th:src="@{green-car.png}"
+     alt="GreenCar"
+     border="0"/>
+
 <hr size="2"/>
 <address>CF Summit 2019</address>
 </body>
