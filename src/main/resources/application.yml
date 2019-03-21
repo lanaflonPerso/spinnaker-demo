@@ -21,10 +21,10 @@ management:
   metrics:
     export:
       datadog:
-        api-key: 81a5c1653097ede0fc4555e95b6fcccd
+        api-key: ADD
         enabled: true
         step: PT10S
-        application-key: d76492bd478f07bbe1c3ac4128248a7bde51b7e9
+        application-key: ADD
 version: 1.0
 
 ---
